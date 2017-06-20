@@ -1,0 +1,28 @@
+{
+  "name": "oa_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "supervisor --harmony app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zoro",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
+    "connect-multiparty": "^2.0.0",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "mongoose": "^4.9.3",
+    "mongoose-auto-increment": "^5.0.1",
+    "mongoose-id-autoinc": "^2013.7.14-4",
+    "promise": "^7.1.1",
+    "querystring": "^0.2.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0"
+  }
+}
