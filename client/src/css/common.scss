@@ -1,0 +1,33 @@
+// 常用字体大小
+$font24: 24px;
+$font20: 20px;
+$font18: 18px;
+$font16: 16px;
+$font14: 14px;
+$font12: 12px;
+
+// 常用色值
+$orange: #ea6f5a;
+$gray: #969696;
+$lightgray: #d9d9d9;
+$white: #fff;
+
+.clearfix:after {
+    content: '';
+    display: block;
+    height: 1;
+    clear: both;
+}
+
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+
+

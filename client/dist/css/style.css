@@ -2,8 +2,76 @@
   margin: 0;
   padding: 0; }
 
-body {
-  font-size: 20px; }
+.clearfix:after {
+  content: '';
+  display: block;
+  height: 1;
+  clear: both; }
 
-body {
-  color: #ff0000; }
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+a:hover {
+  cursor: pointer; }
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #d9d9d9; }
+  .header .logo {
+    float: left;
+    height: inherit;
+    padding: 0 20px;
+    font-size: 24px;
+    color: #ea6f5a; }
+  .header .buttons {
+    float: right;
+    height: inherit; }
+    .header .buttons a {
+      margin: 0 10px;
+      padding: 7px 20px;
+      font-size: 16px; }
+    .header .buttons a:nth-child(1) {
+      color: #969696; }
+    .header .buttons a:nth-child(2) {
+      color: #ea6f5a;
+      border: 1px solid #ea6f5a;
+      border-radius: 5px; }
+    .header .buttons a:nth-child(3) {
+      color: #fff;
+      border-radius: 5px;
+      background: #ea6f5a; }
+  .header .container {
+    width: 960px;
+    height: inherit;
+    margin: 0 auto; }
+    .header .container a {
+      float: left;
+      margin-right: 30px;
+      color: #ea6f5a;
+      font-size: 18px; }
+    .header .container .search {
+      float: left;
+      position: relative;
+      width: 200px;
+      height: 36px;
+      line-height: 36px;
+      margin-top: 7px;
+      background: #d9d9d9;
+      border-radius: 20px; }
+      .header .container .search input {
+        margin-left: 15px;
+        background: #d9d9d9;
+        border: none;
+        outline: none;
+        font-size: 14px; }
+      .header .container .search div {
+        position: absolute;
+        top: 6px;
+        right: 15px;
+        width: 24px;
+        height: 24px; }
