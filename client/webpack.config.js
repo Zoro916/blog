@@ -1,8 +1,10 @@
 
 var path = require('path');
+var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -18,7 +20,7 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['react']
+                        presets: ['react', 'es2015']
                     }
                 }
             },
@@ -32,13 +34,21 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.ProvidePlugin({
+            React: 'react'    
+        }),
         new HtmlWebpackPlugin({
             title: 'My Blog',
             filename: 'index.html',
             template: 'index.html'
         }),
         new CleanWebpackPlugin(['dist']),
-        new ExtractTextWebpackPlugin('css/style.css')
+        new ExtractTextWebpackPlugin('css/style.css'),
+        new UglifyJsPlugin({
+            compress: true,
+            mangle: false,
+            comments: false
+        })
     ] 
 };
 
