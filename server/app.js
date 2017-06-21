@@ -9,7 +9,7 @@ var app = express();
 mongoose.Promise = global.Promise;
 
 //定义监听端口为9000
-app.set('port', process.env.PORT || 9000);
+app.set('port', process.env.PORT || 5000);
 
 //引入跨域请求中间件cors
 app.use(cors());
@@ -20,6 +20,10 @@ app.use(body_parser.urlencoded({
     extended: false
 }));
 app.use(body_parser.json());
+app.get('/', function(req, res) {
+    res.send('接口服务器已启动');
+})
+
 //引入路由主文件，并将所有请求在路由主文件中进行分发
 var routes = require('./route');
 routes(app);

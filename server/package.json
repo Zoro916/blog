@@ -1,7 +1,11 @@
 {
-  "name": "oa_server",
+  "name": "blog",
   "version": "1.0.0",
   "description": "",
+  "apidoc": {
+     "title": "Blog-API接口文档",
+     "url" : "http://112.74.40.94:3000/"
+  },
   "main": "app.js",
   "scripts": {
     "start": "supervisor --harmony app.js",
