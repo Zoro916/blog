@@ -86,5 +86,98 @@
     }
 }
 
+// 登录注册
+.account {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+
+    .box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 360px;
+        margin: -140px 0 0 -180px;
+        background: $white;
+
+        .box-header {
+            height: 49px;
+            line-height: 49px;
+            margin: 0 20px;
+            border-bottom: 1px solid $lightgray;
+            font-size: $font16;
+            color: $gray;
+
+            .active {
+                color: $orange;
+                border-bottom: 1px solid $orange;
+            }
+
+            div {
+                float: left;
+                width: 80px;
+                height: inherit;
+                text-align: center;
+            }
+
+            div:hover {
+                cursor: pointer;
+                color: $orange;
+                border-bottom: 1px solid $orange;
+            }
+
+            .box-close {
+                float: right;
+                width: 20px;
+                height: 20px;
+                margin-top: 15px;
+                background: red;
+            }
+        }
+
+        .account-login {
+            padding: 30px 30px;
+
+            > input {
+                display: block;
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                margin-bottom: 10px;
+                border: 1px solid $lightgray;
+                padding: 0 8px;
+                font-size: $font16;
+            }
+
+            > div {
+                height: 30px;
+                line-height: 30px;
+                margin-bottom: 10px;
+                color: $gray;
+
+                > input {
+                    margin-right: 5px;
+                }
+
+                > a {
+                    float: right;
+                }
+            }
+
+            > a {
+                display: block;
+                height: 40px;
+                line-height: 40px;
+                background: $orange;
+                color: $white;
+                text-align: center;
+                font-size: $font18;
+            }
+        }
+    }
+}
+
+
 
 

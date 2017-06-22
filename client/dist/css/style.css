@@ -1,6 +1,7 @@
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  box-sizing: border-box; }
 
 .clearfix:after {
   content: '';
@@ -75,3 +76,69 @@ a:hover {
         right: 15px;
         width: 24px;
         height: 24px; }
+
+.account {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); }
+  .account .box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 360px;
+    margin: -140px 0 0 -180px;
+    background: #fff; }
+    .account .box .box-header {
+      height: 49px;
+      line-height: 49px;
+      margin: 0 20px;
+      border-bottom: 1px solid #d9d9d9;
+      font-size: 16px;
+      color: #969696; }
+      .account .box .box-header .active {
+        color: #ea6f5a;
+        border-bottom: 1px solid #ea6f5a; }
+      .account .box .box-header div {
+        float: left;
+        width: 80px;
+        height: inherit;
+        text-align: center; }
+      .account .box .box-header div:hover {
+        cursor: pointer;
+        color: #ea6f5a;
+        border-bottom: 1px solid #ea6f5a; }
+      .account .box .box-header .box-close {
+        float: right;
+        width: 20px;
+        height: 20px;
+        margin-top: 15px;
+        background: red; }
+    .account .box .account-login {
+      padding: 30px 30px; }
+      .account .box .account-login > input {
+        display: block;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 10px;
+        border: 1px solid #d9d9d9;
+        padding: 0 8px;
+        font-size: 16px; }
+      .account .box .account-login > div {
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: 10px;
+        color: #969696; }
+        .account .box .account-login > div > input {
+          margin-right: 5px; }
+        .account .box .account-login > div > a {
+          float: right; }
+      .account .box .account-login > a {
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        background: #ea6f5a;
+        color: #fff;
+        text-align: center;
+        font-size: 18px; }
