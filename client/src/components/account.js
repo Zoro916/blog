@@ -5,7 +5,6 @@ import Account_register from './account_register';
 class Account extends React.Component {
     constructor(props) {
         super(props);
-        this.handleAccount = this.handleAccount.bind(this);
     }
 
     handleAccount(ev, tab) {
