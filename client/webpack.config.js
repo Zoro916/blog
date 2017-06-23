@@ -35,7 +35,8 @@ module.exports = {
     },
     plugins: [
         new webpack.ProvidePlugin({
-            React: 'react'    
+            React: 'react',
+            fetch: 'whatwg-fetch'   
         }),
         new HtmlWebpackPlugin({
             title: 'My Blog',
