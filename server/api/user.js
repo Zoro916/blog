@@ -5,7 +5,7 @@ var router = express.Router();
 var model = require('../model');
 var User = model.User;
 /**
- * @api {post} user/signup 用户登录
+ * @api {post} user/signin 用户登录
  * @apiGroup User
  * @apiVersion 1.0.0
  * @apiDescription 接口详细描述
@@ -19,7 +19,7 @@ var User = model.User;
  * @apiSuccess {String} auth_token 访问令牌
  *
  */
-router.post('/signup', function(req, res) {
+router.post('/signin', function(req, res) {
     var {user_name, pass_word} = req.body;
     if (!(user_name && pass_word)) {
         return res.send({err_info: '参数错误', status: 0});
@@ -47,7 +47,7 @@ router.post('/signup', function(req, res) {
     });
 });
 /**
- * @api {post} user/signin 注册用户
+ * @api {post} user/signup 注册用户
  * @apiGroup User
  * @apiVersion 1.0.0
  * @apiDescription 接口详细描述
@@ -62,7 +62,7 @@ router.post('/signup', function(req, res) {
  * @apiSuccess {String} auth_token 访问令牌
  *
  */
-router.post('/signin', function(req, res) {
+router.post('/signup', function(req, res) {
     var {user_name, pass_word, nick_name} = req.body;
     if (!(user_name && pass_word && nick_name)) {
         return res.send({err_info: '参数错误', status: 0});
