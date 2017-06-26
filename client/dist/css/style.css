@@ -17,8 +17,13 @@
 a:hover {
   cursor: pointer; }
 
+.header-wrap {
+  padding-top: 50px; }
+
 .header {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 50px;
   line-height: 50px;
@@ -79,9 +84,12 @@ a:hover {
 
 .account {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); }
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1100; }
   .account .box {
     position: absolute;
     top: 50%;
