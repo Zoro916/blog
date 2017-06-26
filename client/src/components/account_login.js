@@ -1,4 +1,6 @@
 
+import 'whatwg-fetch';
+
 class Account_login extends React.Component {
 
     handleLogin() {

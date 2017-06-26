@@ -1,4 +1,6 @@
 
+import 'whatwg-fetch';
+
 class Account_register extends React.Component {
     constructor(props) {
         super(props);
