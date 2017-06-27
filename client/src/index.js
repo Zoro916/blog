@@ -2,16 +2,20 @@
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import style from './css/style.scss';
+import style from './public-resource/sass/style.scss';
 
-import Home from './components/home';
-import Create_article from './components/create_article';
+import Home from './pages/home/home';
+import Create_article from './pages/article/create';
+import Login from './pages/user/login';
+import Register from './pages/user/register';
 
 ReactDOM.render(
   <Router>
     <div>
       <Route exact path="/" component={Home} />
-      <Route path="/create_article" component={Create_article} />
+      <Route path="/create" component={Create_article} />
+      <Route path="/login" component={Login} />
+      <Route path="/register" component={Register} />
     </div>
   </Router>, 
   document.getElementById('root')

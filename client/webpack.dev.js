@@ -13,6 +13,7 @@ module.exports = {
         filename: 'js/bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
+    
     module: {
         rules: [
             {
@@ -34,6 +35,7 @@ module.exports = {
             }
         ]
     },
+
     plugins: [
         new webpack.ProvidePlugin({
             React: 'react'

@@ -3,6 +3,12 @@
   padding: 0;
   box-sizing: border-box; }
 
+button {
+  border: none;
+  background: #fff;
+  outline: none;
+  cursor: pointer; }
+
 .clearfix:after {
   content: '';
   display: block;
@@ -37,17 +43,21 @@ a:hover {
   .header .buttons {
     float: right;
     height: inherit; }
-    .header .buttons a {
+    .header .buttons .button, .header .buttons .login-status .nickname, .header .buttons .login-status .login, .header .buttons .login-status .register, .header .buttons .create-article {
       margin: 0 10px;
       padding: 7px 20px;
+      border-radius: 5px;
       font-size: 16px; }
-    .header .buttons a:nth-child(1) {
-      color: #969696; }
-    .header .buttons a:nth-child(2) {
-      color: #ea6f5a;
-      border: 1px solid #ea6f5a;
-      border-radius: 5px; }
-    .header .buttons a:nth-child(3) {
+    .header .buttons .login-status {
+      float: left; }
+      .header .buttons .login-status .nickname {
+        color: #ea6f5a; }
+      .header .buttons .login-status .login {
+        color: #969696; }
+      .header .buttons .login-status .register {
+        color: #fff;
+        background: #ea6f5a; }
+    .header .buttons .create-article {
       color: #fff;
       border-radius: 5px;
       background: #ea6f5a; }
@@ -82,71 +92,81 @@ a:hover {
         width: 24px;
         height: 24px; }
 
-.account {
-  position: fixed;
+.login-wrap {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1100; }
-  .account .box {
+  background: #f1f1f1; }
+  .login-wrap .logo {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    font-size: 24px;
+    color: #ea6f5a; }
+  .login-wrap .form {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 360px;
-    margin: -140px 0 0 -180px;
+    margin: -180px 0 0 -180px;
+    padding: 10px 30px 30px;
     background: #fff; }
-    .account .box .box-header {
+    .login-wrap .form .tabs > div {
+      float: left;
+      width: 50%;
       height: 49px;
       line-height: 49px;
-      margin: 0 20px;
-      border-bottom: 1px solid #d9d9d9;
-      font-size: 16px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #969696;
+      font-size: 18px;
+      text-align: center;
+      cursor: pointer; }
+    .login-wrap .form .tabs .tab-active {
+      color: #ea6f5a;
+      border-bottom: 1px solid #ea6f5a; }
+    .login-wrap .form > input {
+      display: block;
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      margin-bottom: 10px;
+      border: 1px solid #d9d9d9;
+      padding: 0 8px;
+      font-size: 16px; }
+    .login-wrap .form > div {
+      height: 30px;
+      line-height: 30px;
+      margin-bottom: 10px;
       color: #969696; }
-      .account .box .box-header .active {
-        color: #ea6f5a;
-        border-bottom: 1px solid #ea6f5a; }
-      .account .box .box-header div {
-        float: left;
-        width: 80px;
-        height: inherit;
-        text-align: center; }
-      .account .box .box-header div:hover {
-        cursor: pointer;
-        color: #ea6f5a;
-        border-bottom: 1px solid #ea6f5a; }
-      .account .box .box-header .box-close {
-        float: right;
-        width: 20px;
-        height: 20px;
-        margin-top: 15px;
-        background: red; }
-    .account .box .account-login {
-      padding: 30px 30px; }
-      .account .box .account-login > input {
-        display: block;
-        width: 100%;
-        height: 40px;
-        line-height: 40px;
-        margin-bottom: 10px;
-        border: 1px solid #d9d9d9;
-        padding: 0 8px;
-        font-size: 16px; }
-      .account .box .account-login > div {
-        height: 30px;
-        line-height: 30px;
-        margin-bottom: 10px;
-        color: #969696; }
-        .account .box .account-login > div > input {
-          margin-right: 5px; }
-        .account .box .account-login > div > a {
-          float: right; }
-      .account .box .account-login > a {
-        display: block;
-        height: 40px;
-        line-height: 40px;
-        background: #ea6f5a;
-        color: #fff;
-        text-align: center;
-        font-size: 18px; }
+      .login-wrap .form > div > input {
+        margin-right: 5px; }
+      .login-wrap .form > div > a {
+        float: right; }
+    .login-wrap .form > a {
+      display: block;
+      height: 40px;
+      line-height: 40px;
+      background: #ea6f5a;
+      color: #fff;
+      text-align: center;
+      font-size: 18px; }
+
+.create-article-wrap {
+  width: 960px;
+  margin: 20px auto; }
+  .create-article-wrap > input {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    padding: 0 10px;
+    margin-bottom: 20px; }
+  .create-article-wrap > button {
+    margin: 10px 0;
+    padding: 7px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #ea6f5a;
+    color: #fff; }
