@@ -5,6 +5,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
+console.log(__dirname);
+
 module.exports = {
     devtool: 'cheap-module-source-map',
     
@@ -34,6 +36,14 @@ module.exports = {
                 })
             }
         ]
+    },
+
+    resolve: {
+        alias: {
+            components: path.resolve(__dirname, 'src/public-resource/components'),
+            image: path.resolve(__dirname, 'src/public-resource/image'),
+            sass: path.resolve(__dirname, 'src/public-resource/sass')
+        }
     },
 
     plugins: [

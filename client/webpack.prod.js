@@ -35,6 +35,14 @@ module.exports = {
         ]
     },
     
+    resolve: {
+        alias: {
+            components: path.resolve(__dirname, 'src/public-resource/components'),
+            image: path.resolve(__dirname, 'src/public-resource/image'),
+            sass: path.resolve(__dirname, 'src/public-resource/sass')
+        }
+    },
+    
     plugins: [
         new webpack.ProvidePlugin({
             React: 'react'

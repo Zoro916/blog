@@ -34,6 +34,12 @@ class Header extends React.Component {
             this.props.history.push('/create');
         }
     }
+
+    handleLogout() {
+        this.setState({
+            username: ''
+        });
+    }
  
     render() {
         let status = this.state.active;
@@ -42,8 +48,8 @@ class Header extends React.Component {
                 <header className='header'>
                     <div className='logo'>随便编</div>
                     <div className='buttons'>
-                        <User_login username={this.state.username} />
-                        <button className='create-article' onClick={() => {this.handleCreateArticle()}}>写文章</button>
+                        <User_login username={this.state.username} handleLogout={() => this.handleLogout()} />
+                        <button className='create-article' onClick={() => this.handleCreateArticle()}>写文章</button>
                     </div>
                     <div className='container'>
                         <a>首页</a>

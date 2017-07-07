@@ -42,7 +42,8 @@ a:hover {
     color: #ea6f5a; }
   .header .buttons {
     float: right;
-    height: inherit; }
+    height: inherit;
+    margin-right: 50px; }
     .header .buttons .button, .header .buttons .login-status .nickname, .header .buttons .login-status .login, .header .buttons .login-status .register, .header .buttons .create-article {
       margin: 0 10px;
       padding: 7px 20px;

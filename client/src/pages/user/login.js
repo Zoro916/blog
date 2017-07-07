@@ -1,5 +1,5 @@
 
-import 'whatwg-fetch';
+import _fetch from 'components/fetch';
 import { withRouter } from 'react-router-dom';
 
 class Login extends React.Component {
@@ -11,22 +11,20 @@ class Login extends React.Component {
         let form = document.querySelector('form');
         let username = form['username'].value;
         let password = form['password'].value;
-        let data = new FormData();
-        data.append('user_name', username);
-        data.append('pass_word', password);
+        let data = {
+            user_name: form['username'].value,
+            pass_word: form['password'].value
+        };
         
-        fetch('http://112.74.40.94:3000/user/signin', {
-            method: 'POST',
-            body: data
-        }).then((res) => {
-            if (res.ok) {
-                return res.json();
-            }
-        }).then((res) => {
+        _fetch.post('/user/signin', data, function(res) {
+            if (!res.status) {
+                return alert(res.err_info);
+            } 
+
             sessionStorage.setItem('blog_user', JSON.stringify({username: username, auth_token: res.auth_token}));
             alert('登录成功');
             this.props.history.push('/');
-        })
+        });
     }
 
     handleClickRegister() {

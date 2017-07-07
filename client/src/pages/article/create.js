@@ -1,6 +1,7 @@
 
-import Header from '../../public-resource/components/header';
+import Header from 'components/header';
 import E from 'wangeditor';
+import _fetch from 'components/fetch';
 
 class Create_article extends React.Component {
     constructor(props) {
@@ -32,15 +33,12 @@ class Create_article extends React.Component {
         data.append('content', content);
         data.append('auth_token', auth_token);
 
-        fetch('http://112.74.40.94:3000/article/create', {
-            method: 'POST',
-            body: data
-        }).then((res) => {
-            if (res.ok) {
-                return res.json();
-            }
-        }).then((res) => {
-            console.log(res);
+        _fetch.post('/article/create', data, function(res) {
+            if (!res.status) {
+                return alert(res.err_info);
+            } 
+            
+            alert('提交成功');
             this.props.history.push('/');
         });
     }

@@ -1,5 +1,5 @@
 
-import Header from '../../public-resource/components/header';
+import Header from 'components/header';
 
 class Home extends React.Component {
     render() {

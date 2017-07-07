@@ -1,5 +1,5 @@
 
-import 'whatwg-fetch';
+import _fetch from 'components/fetch';
 import { withRouter } from 'react-router-dom';
 
 class Register extends React.Component {
@@ -12,19 +12,17 @@ class Register extends React.Component {
         let username = form['username'].value;
         let nickname = form['nickname'].value;
         let password = form['password'].value;
-        let data = new FormData();
-        data.append('user_name', username);
-        data.append('nick_name', nickname);
-        data.append('pass_word', password);
+        let data = {
+            user_name: username,
+            nick_name: nickname,
+            pass_word: password
+        };
         
-        fetch('http://112.74.40.94:3000/user/signup', {
-            method: 'POST',
-            body: data
-        }).then((res) => {
-            if (res.ok) {
-                return res.json();
-            }
-        }).then((res) => {
+        _fetch.post('/user/signup', data, function(res) {
+            if (!res.status) {
+                return alert(res.err_info);
+            } 
+
             sessionStorage.setItem('blog_user', JSON.stringify({username: username, auth_token: res.auth_token}));
             alert('注册成功');
             this.props.history.push('/');
