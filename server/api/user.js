@@ -82,5 +82,35 @@ router.post('/signup', function(req, res) {
         }
     });
 });
-
+/**
+ * @api {post} user/unique 检测用户名是否存在
+ * @apiGroup User
+ * @apiVersion 1.0.0
+ * @apiDescription 接口详细描述
+ *
+ * @apiParam {String} user_name 用户名
+ *
+ * @apiSuccess {String} status 1/0 (成功/异常)
+ * @apiSuccess {String} err_info 消息说明
+ * @apiSuccess {String} is_unique 1、该用户名未重复，可正常注册，2、该用户名已存在
+ *
+ */
+ router.post('/unique', function(req, res) {
+     var {user_name} = req.body;
+     if (!user_name) {
+         return res.send({err_info: '参数错误', status: 0});
+     }
+     User.findOne({
+         user_name: user_name
+     }, function(err, data) {
+         if(err){
+             res.send({status: 0, err_info: '数据库异常'})
+         }
+         if (!data) {
+             return res.send({status: 1, is_unique: 1});
+         } else {
+             return res.send({status: 1, is_unique: 2});
+         }
+     });
+ });
 module.exports = router;

@@ -82,10 +82,10 @@ router.post('/all_search', function(req, res) {
     if (!(title && cur_page)) {
         return res.send({err_info: '参数错误', status: 0});
     };
-    Article.find({
+    Article.count({
         title: title
     }, function(err, data) {
-        total = data.length;
+        total = data;
     }).exec(function(err, data) {
         Article.find({title: title}).skip(cur_page * page_size).limit(page_size).sort({'update_time': -1}).exec(function(err, data) {
             if (err) {
@@ -148,8 +148,8 @@ router.post('/search', function(req, res) {
     until.token(auth_token, res, function(err, data) {
         var author_id = data.user_id;
         var title = new RegExp(req.body.title);
-        Article.find({title: title, author_id: author_id}).exec(function(err, data) {
-            total = data.length;
+        Article.count({title: title, author_id: author_id}).exec(function(err, data) {
+            total = data;
             Article.find({title: title, author_id: author_id}).skip(cur_page * page_size).limit(page_size).sort({'update_time': -1}).exec(function(err, data) {
                 if (err) {
                     return res.send({status: 0, err_info: '数据库异常'})
