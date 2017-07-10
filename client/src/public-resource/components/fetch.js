@@ -4,10 +4,19 @@ import 'whatwg-fetch';
 function transformData(data) {
     let form = document.createElement('form');
     let formData = new FormData(form)
+    let signature = null;
+    let parma_options = Object.keys(data).sort();
 
     for (let key in data) {
         formData.append(key,data[key])
-    }
+    };
+    parma_options.forEach((item, index) => {
+        signature += item
+    });
+
+    signature = md5(signature);
+
+    formData.append('signature', signature);
 
     return formData;
 }
@@ -36,14 +45,6 @@ const _fetch = {
             callback(res);
         });
     }
-}
-
-function formatData(data) {
-    let formData = new FormData();
-    for (let key in data) {
-        formData.append(key, JSON.stringify(data[key]));
-    }
-    return formData;
 }
 
 export default _fetch;
