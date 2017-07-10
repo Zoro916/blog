@@ -1,4 +1,3 @@
-
 import 'whatwg-fetch';
 
 const _fetch = {
@@ -13,7 +12,7 @@ const _fetch = {
                 return res.json();
             }
         }).then((res) => {
-            callback(res);  
+            callback(res);
         });
     },
 
