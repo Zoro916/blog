@@ -213,7 +213,7 @@ router.post('/remove', function(req, res) {
 
     });
 });
-/**
+ /**
   * @api {post} article/update 修改文章
   * @apiGroup Article
   * @apiVersion 1.0.0
@@ -262,7 +262,7 @@ router.post('/update', function(req, res) {
 
     });
 });
-/**
+ /**
   * @api {post} article/detail 文章详情
   * @apiGroup Article
   * @apiVersion 1.0.0

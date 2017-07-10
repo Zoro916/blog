@@ -1,0 +1,18 @@
+var project_id = [1,2,3,4];
+var work = [
+    { project_id: 1, data: 'xxx'},
+    { project_id: 2, data: 'aaa'},
+    { project_id: 2, data: 'aaa123'}
+]
+
+var arr = [];
+project_id.forEach((data, index) => {
+    work.forEach((item, index) => {
+        if(data == item.id){
+            arr.push({
+                project_id: data,
+                data: item
+            })
+        }
+    })
+})

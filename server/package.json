@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description":"基于Express+React+mongoDB构建的BlogSite，author：yylww && zoro<p>页面地址：<a href='http://zoulei.com.cn/'>http://zoulei.com.cn/</a></p><p>API地址：<a href='http://112.74.40.94:3000'>http://112.74.40.94:3000</a></p><p>API文档地址：<a href='ttp://112.74.40.94:3001'>http://112.74.40.94:3001</a></p>",
+  "description":"基于Express+React+mongoDB构建的BlogSite，author：yylww && zoro<p>页面地址：<a href='http://zoulei.com.cn/'>http://zoulei.com.cn/</a></p><p>API地址：<a href='http://112.74.40.94:3000'>http://112.74.40.94:3000</a></p><p>API文档地址：<a href='ttp://112.74.40.94:3001'>http://112.74.40.94:3000/api_doc</a></p>",
   "apidoc": {
      "title": "Blog-API接口文档",
      "url" : "http://112.74.40.94:3000/"
