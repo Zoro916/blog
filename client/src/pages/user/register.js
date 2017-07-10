@@ -17,11 +17,10 @@ class Register extends React.Component {
             nick_name: nickname,
             pass_word: md5(password)
         };
-        
         _fetch.post('/user/signup', data, (res) => {
             if (!res.status) {
                 return alert(res.err_info);
-            } 
+            }
 
             sessionStorage.setItem('blog_user', JSON.stringify({username: username, auth_token: res.auth_token}));
             alert('注册成功');

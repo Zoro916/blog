@@ -37,8 +37,8 @@ class Create_article extends React.Component {
         _fetch.post('/article/create', data, (res) => {
             if (!res.status) {
                 return alert(res.err_info);
-            } 
-            
+            }
+
             alert('提交成功');
             this.props.history.push('/');
         });
@@ -54,13 +54,9 @@ class Create_article extends React.Component {
                     <button onClick={(e) => {this.handleClick(e)}}>发布文章</button>
                 </form>
             </div>
-            
+
         );
     }
 }
 
 export default Create_article;
-
-
-
-
