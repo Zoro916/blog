@@ -15,10 +15,10 @@ class Register extends React.Component {
         let data = {
             user_name: username,
             nick_name: nickname,
-            pass_word: password
+            pass_word: md5(password)
         };
         
-        _fetch.post('/user/signup', data, function(res) {
+        _fetch.post('/user/signup', data, (res) => {
             if (!res.status) {
                 return alert(res.err_info);
             } 

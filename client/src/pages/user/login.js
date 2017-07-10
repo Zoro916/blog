@@ -12,17 +12,16 @@ class Login extends React.Component {
         let username = form['username'].value;
         let password = form['password'].value;
         let data = {
-            user_name: form['username'].value,
-            pass_word: form['password'].value
+            user_name: username,
+            pass_word: md5(password)
         };
         
-        _fetch.post('/user/signin', data, function(res) {
+        _fetch.post('/user/signin', data, (res) => {
             if (!res.status) {
                 return alert(res.err_info);
             } 
 
             sessionStorage.setItem('blog_user', JSON.stringify({username: username, auth_token: res.auth_token}));
-            alert('登录成功');
             this.props.history.push('/');
         });
     }

@@ -28,12 +28,13 @@ class Create_article extends React.Component {
         let title = document.querySelector('form')['title'].value;
         let content = this.state.editorContent;
         let auth_token = JSON.parse(sessionStorage.blog_user).auth_token;
-        let data = new FormData();
-        data.append('title', title);
-        data.append('content', content);
-        data.append('auth_token', auth_token);
+        let data = {
+            title: title,
+            auth_token: auth_token,
+            article: content
+        }
 
-        _fetch.post('/article/create', data, function(res) {
+        _fetch.post('/article/create', data, (res) => {
             if (!res.status) {
                 return alert(res.err_info);
             } 
