@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+button {
+  border: none;
+  background: #fff;
+  outline: none;
+  cursor: pointer; }
+
+a {
+  text-decoration: none;
+  cursor: pointer; }
+
+.clearfix:after {
+  content: '';
+  display: block;
+  height: 1;
+  clear: both; }
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+a:hover {
+  cursor: pointer; }
+
+.header-wrap {
+  padding-top: 50px; }
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #d9d9d9; }
+  .header .logo {
+    float: left;
+    height: inherit;
+    padding: 0 20px;
+    font-size: 24px;
+    color: #ea6f5a; }
+  .header .buttons {
+    float: right;
+    height: inherit;
+    margin-right: 50px; }
+    .header .buttons .button, .header .buttons .login-status .nickname, .header .buttons .login-status .login, .header .buttons .login-status .register, .header .buttons .create-article {
+      margin: 0 10px;
+      padding: 7px 20px;
+      border-radius: 5px;
+      font-size: 16px; }
+    .header .buttons .login-status {
+      float: left; }
+      .header .buttons .login-status .nickname {
+        color: #ea6f5a; }
+      .header .buttons .login-status .login {
+        color: #969696; }
+      .header .buttons .login-status .register {
+        color: #fff;
+        background: #ea6f5a; }
+    .header .buttons .create-article {
+      color: #fff;
+      border-radius: 5px;
+      background: #ea6f5a; }
+  .header .container {
+    width: 960px;
+    height: inherit;
+    margin: 0 auto; }
+    .header .container a {
+      float: left;
+      margin-right: 30px;
+      color: #ea6f5a;
+      font-size: 18px; }
+    .header .container .search {
+      float: left;
+      position: relative;
+      width: 200px;
+      height: 36px;
+      line-height: 36px;
+      margin-top: 7px;
+      background: #d9d9d9;
+      border-radius: 20px; }
+      .header .container .search input {
+        margin-left: 15px;
+        background: #d9d9d9;
+        border: none;
+        outline: none;
+        font-size: 14px; }
+      .header .container .search div {
+        position: absolute;
+        top: 6px;
+        right: 15px;
+        width: 24px;
+        height: 24px; }
+
+.login-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f1f1f1; }
+  .login-wrap .logo {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    font-size: 24px;
+    color: #ea6f5a; }
+  .login-wrap .form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 360px;
+    margin: -180px 0 0 -180px;
+    padding: 10px 30px 30px;
+    background: #fff; }
+    .login-wrap .form .tabs > a, .login-wrap .form .tabs div {
+      float: left;
+      width: 50%;
+      height: 49px;
+      line-height: 49px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #969696;
+      font-size: 18px;
+      text-align: center;
+      color: #969696;
+      cursor: pointer; }
+    .login-wrap .form .tabs .tab-active {
+      color: #ea6f5a;
+      border-bottom: 1px solid #ea6f5a; }
+    .login-wrap .form > input {
+      display: block;
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      margin-bottom: 10px;
+      border: 1px solid #d9d9d9;
+      padding: 0 8px;
+      font-size: 16px; }
+    .login-wrap .form > div {
+      height: 30px;
+      line-height: 30px;
+      margin-bottom: 10px;
+      color: #969696; }
+      .login-wrap .form > div > input {
+        margin-right: 5px; }
+      .login-wrap .form > div > a {
+        float: right; }
+    .login-wrap .form > a {
+      display: block;
+      height: 40px;
+      line-height: 40px;
+      background: #ea6f5a;
+      color: #fff;
+      text-align: center;
+      font-size: 18px; }
+
+.create-article-wrap {
+  width: 960px;
+  margin: 20px auto; }
+  .create-article-wrap > input {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    padding: 0 10px;
+    margin-bottom: 20px; }
+  .create-article-wrap > button {
+    margin: 10px 0;
+    padding: 7px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #ea6f5a;
+    color: #fff; }

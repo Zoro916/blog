@@ -13,7 +13,8 @@ module.exports = {
     entry: './src/index.js',
     output: {
         filename: 'js/bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/'
     },
     
     module: {
@@ -40,6 +41,7 @@ module.exports = {
 
     resolve: {
         alias: {
+            pages: path.resolve(__dirname, 'src/pages'),
             components: path.resolve(__dirname, 'src/public-resource/components'),
             image: path.resolve(__dirname, 'src/public-resource/image'),
             sass: path.resolve(__dirname, 'src/public-resource/sass')
@@ -61,7 +63,6 @@ module.exports = {
     ],
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
-        compress: true,
         port: 8080,
         historyApiFallback: true
     }

@@ -1,5 +1,5 @@
 
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class User_login extends React.Component {
     constructor(props) {
@@ -7,11 +7,6 @@ class User_login extends React.Component {
         this.state = {
             username: ''
         }
-    }
-
-    handleClick(type) {
-        let url = '/' + type;
-        this.props.history.push(url);
     }
 
     handleLogout() {
@@ -29,8 +24,8 @@ class User_login extends React.Component {
                         <span onClick={() => {this.handleLogout()}}>退出</span>
                     </span> : 
                     <div>
-                        <button className='login' onClick={(type) => {this.handleClick('login')}}>登录</button>
-                        <button className='register' onClick={(type) => {this.handleClick('register')}}>注册</button>
+                        <Link to='/user/login' className='login'>登录</Link>
+                        <Link to='/user/register' className='register'>注册</Link>
                     </div>
                 }
             </div>

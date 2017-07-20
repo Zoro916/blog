@@ -3,7 +3,7 @@ import Header from 'components/header';
 import E from 'wangeditor';
 import _fetch from 'components/fetch';
 
-class Create_article extends React.Component {
+class Create extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -47,7 +47,6 @@ class Create_article extends React.Component {
     render() {
         return (
             <div>
-                <Header />
                 <form className='create-article-wrap'>
                     <input type="text" placeholder='请输入文章标题' name='title' />
                     <div ref='editorElem' style={{textAlign: 'left'}}></div>
@@ -59,4 +58,4 @@ class Create_article extends React.Component {
     }
 }
 
-export default Create_article;
+export default Create;

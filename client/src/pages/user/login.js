@@ -1,6 +1,6 @@
 
 import _fetch from 'components/fetch';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class Login extends React.Component {
     constructor(props) {
@@ -26,18 +26,14 @@ class Login extends React.Component {
         });
     }
 
-    handleClickRegister() {
-        this.props.history.push('/register');
-    }
-
     render() {
         return (
             <div className='login-wrap'>
-                <div className='logo'>随便编</div>
+                <Link to='/' className='logo'>随便编</Link>
                 <form className='form'>
                     <div className='tabs'>
                         <div className='tab-active'>登录</div>
-                        <div onClick={() => {this.handleClickRegister()}}>注册</div>
+                        <Link to='/user/register'>注册</Link>
                     </div>
                     <input type="text" name='username' placeholder='请输入账号' />
                     <input type="password" name='password' placeholder='请输入密码' />
