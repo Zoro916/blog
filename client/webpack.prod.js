@@ -34,9 +34,10 @@ module.exports = {
             }
         ]
     },
-    
+
     resolve: {
         alias: {
+            pages: path.resolve(__dirname, 'src/pages'),
             components: path.resolve(__dirname, 'src/public-resource/components'),
             image: path.resolve(__dirname, 'src/public-resource/image'),
             sass: path.resolve(__dirname, 'src/public-resource/sass')
@@ -45,7 +46,8 @@ module.exports = {
     
     plugins: [
         new webpack.ProvidePlugin({
-            React: 'react'
+            React: 'react',
+            md5: 'md5'
         }),
         new HtmlWebpackPlugin({
             title: 'My Blog',

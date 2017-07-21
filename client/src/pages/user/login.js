@@ -1,6 +1,6 @@
 
 import _fetch from 'components/fetch';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class Login extends React.Component {
     constructor(props) {
@@ -12,33 +12,28 @@ class Login extends React.Component {
         let username = form['username'].value;
         let password = form['password'].value;
         let data = {
-            user_name: form['username'].value,
-            pass_word: form['password'].value
+            user_name: username,
+            pass_word: md5(password)
         };
         
-        _fetch.post('/user/signin', data, function(res) {
+        _fetch.post('/user/signin', data, (res) => {
             if (!res.status) {
                 return alert(res.err_info);
             } 
 
             sessionStorage.setItem('blog_user', JSON.stringify({username: username, auth_token: res.auth_token}));
-            alert('登录成功');
             this.props.history.push('/');
         });
-    }
-
-    handleClickRegister() {
-        this.props.history.push('/register');
     }
 
     render() {
         return (
             <div className='login-wrap'>
-                <div className='logo'>随便编</div>
+                <Link to='/' className='logo'>随便编</Link>
                 <form className='form'>
                     <div className='tabs'>
                         <div className='tab-active'>登录</div>
-                        <div onClick={() => {this.handleClickRegister()}}>注册</div>
+                        <Link to='/user/register'>注册</Link>
                     </div>
                     <input type="text" name='username' placeholder='请输入账号' />
                     <input type="password" name='password' placeholder='请输入密码' />

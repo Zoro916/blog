@@ -1,6 +1,6 @@
 
 import User_login from './user_login';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class Header extends React.Component {
     constructor(props) {
@@ -29,9 +29,9 @@ class Header extends React.Component {
     handleCreateArticle() {
         if (!sessionStorage.blog_user) {
             alert('请先登录');
-            this.props.history.push('/login');
+            this.props.history.push('/user/login');
         } else {
-            this.props.history.push('/create');
+            this.props.history.push('/article/create');
         }
     }
 
@@ -46,7 +46,7 @@ class Header extends React.Component {
         return (
             <div className='header-wrap'>
                 <header className='header'>
-                    <div className='logo'>随便编</div>
+                    <Link to='/' className='logo'>随便编</Link>
                     <div className='buttons'>
                         <User_login username={this.state.username} handleLogout={() => this.handleLogout()} />
                         <button className='create-article' onClick={() => this.handleCreateArticle()}>写文章</button>
