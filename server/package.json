@@ -8,7 +8,7 @@
   },
   "main": "app.js",
   "scripts": {
-    "start": "supervisor --harmony app.js",
+    "start": "open http://localhost:5000/api_doc/ && supervisor --harmony app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "zoro",

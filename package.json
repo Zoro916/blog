@@ -1,5 +1,25 @@
 {
   "dependencies": {
     "react-router": "^4.1.1"
-  }
+  },
+  "name": "blog",
+  "description": "zoro && yy blog repo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd server/ && npm start & cd client/ && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zoro916/blog.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "zoro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zoro916/blog/issues"
+  },
+  "homepage": "https://github.com/Zoro916/blog#readme"
 }
