@@ -33,8 +33,9 @@ class List extends React.Component {
         let list = listArr.map((item, i) => {
             return (
                 <div className='article' key={'article_'+i}>
-                    <Link to={`/article/detail/${item.article_id}`} className='title'>{item.title}</Link>
+                    <Link to={`/article/detail/${item.article_id}`} className='title ellipsis'>{item.title}</Link>
                     <p>作者：{item.author}</p>
+                    <p>更新时间：{item.update_time}</p>
                 </div>
             );
         });
