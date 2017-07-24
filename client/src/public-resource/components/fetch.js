@@ -20,14 +20,24 @@ function transformData(data) {
     return formData;
 }
 
+function showModal() {
+    document.getElementById('modal').style.display = 'block';
+}
+
+function hideModal() {
+    document.getElementById('modal').style.display = 'none';
+}
+
 const _fetch = {
     baseUrl: 'http://112.74.40.94:3000',
     post: function(url, data, callback) {
+        showModal();
         fetch(this.baseUrl + url, {
             method: 'POST',
             body: transformData(data)
         }).then((res) => {
             if (res.ok) {
+                hideModal();
                 return res.json();
             }
         }).then((res) => {
@@ -42,14 +52,6 @@ const _fetch = {
             callback(res);
         });
     }
-}
-
-function formatData(data) {
-    let formData = new FormData();
-    for (let key in data) {
-        formData.append(key, JSON.stringify(data[key]));
-    }
-    return formData;
 }
 
 export default _fetch;

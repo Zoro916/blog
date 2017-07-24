@@ -1,10 +1,12 @@
 
 @import 'reset';
 @import 'common';
+@import 'loading';
 
 // 页面头部 start
 .header-wrap {
     padding-top: 50px;
+    min-width: 1200px;
 }
 
 .header {
@@ -13,6 +15,7 @@
     left: 0;
     width: 100%;
     height: 50px;
+    min-width: 1000px;
     line-height: 50px;
     border-bottom: 1px solid #d9d9d9;
 
@@ -216,6 +219,62 @@
     }
 }
 // 新建文章 end
+
+// 文章列表 start
+.article-list {
+    width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+
+    > .article {
+        padding: 15px 0;
+
+        > .title {
+            display: block;
+            font-size: $font20;
+            color: $black;
+        }
+
+        > p {
+            float: left;
+            margin-right: 30px;
+            color: $gray;
+            font-size: $font13;
+        }
+    }
+}
+// 文章列表 end
+
+// 文章详情 start
+.article-detail {
+    width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+
+    > h1 {
+        color: $orange;
+    }
+
+    > .info {
+        color: $gray;
+        font-size: $font13;
+
+        > span {
+            margin-right: 25px;
+        }
+    }
+
+    > .content {
+        margin: 20px 0;
+        padding: 15px 20px;
+        background: rgba(0, 0, 0, .1);
+        border-radius: 10px;
+        font-size: $font16;
+        color: $black;
+    }
+
+}
+// 文章详情 end
 
 
 
